@@ -1,0 +1,15 @@
+[15:38:12] main: training 1500 steps
+[16:12:43] main: quality complete=4.0% duplicate=0.0% mean_chars=119.9
+[16:12:43] main: recorded (val 2.064)
+[16:12:43] data-1k: training 500 steps
+[16:22:05] data-1k: quality complete=2.0% duplicate=0.0% mean_chars=119.7
+[16:22:05] data-1k: recorded (val 2.539)
+[16:22:05] small: training 500 steps
+[16:24:14] small: quality complete=6.0% duplicate=0.0% mean_chars=119.7
+[16:24:14] small: recorded (val 2.698)
+[16:25:06] main-early: val 2.445, complete 8.0%
+[16:26:02] temperature 0.5: complete=6.0% duplicate=0.0%
+[16:26:52] temperature 0.8: complete=4.0% duplicate=0.0%
+[16:27:42] temperature 1.2: complete=4.0% duplicate=0.0%
+[16:27:42] wrote /home/hatch/workspace/jokeGPT/experiments/temperature.json
+[16:27:42] experiment suite done

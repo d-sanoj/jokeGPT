@@ -1,0 +1,510 @@
+{
+  "runs": [
+    {
+      "run_id": "main",
+      "label": "main",
+      "config": {
+        "d_model": 128,
+        "n_layer": 4,
+        "n_head": 4,
+        "context_len": 128,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 1500,
+        "eval_every": 100,
+        "checkpoint_every": 500,
+        "seed": 42,
+        "data_subset": null,
+        "run_id": "main"
+      },
+      "train_loss": 2.069551236629486,
+      "val_loss": 2.0639544799923897,
+      "wall_seconds": 2017.7,
+      "steps": 1500,
+      "params": 819840,
+      "samples": [
+        "be skell aching and the out joke my with took. Anyto geal stame.What do you have a makel a put whate nome my mane whise",
+        "dreated a sain tack off the pill I have eroons of a and light a stame to the know of take all stake at bearh..My I day k",
+        "fof a the earss back 1) one a funt purge at pander to got comp is and tweth stelebs forces moniting soce..The neply are",
+        "\"So Beath the ovey get have but.. Mis thinle the sex his storger the on get of the beaped Pertate fute. This it was coul",
+        "ather sbarted his nivens you shrom I idd a band to mee some and the pust her an for hout abor* she so, Docking Illbay th",
+        "the sblacte. Well Me Fight? OSt and with is with no that Gades, toy that fingit? Phoweest? A slean spine to becwion? Why",
+        "sto'rs for the bearbache inits doe.Why my womle it the is a oust for sow the could wen we in hots one beth can like me s",
+        "the so fehing He dit'll fast my wans inpase it to whet a give beratie.Hid was to day new feuld you'r some... I wand whit",
+        "the got shirt goet the ex in that mith Neop you man her wom the was thim word 26! Down wher lught is me on atoze? Reenis",
+        "shim side and \"I's thectan's if man fove ove lee.Whise joke brohw hat ablower is willy\" I no and the feengae hans and at",
+        "upione \"I the beill groodng reetts make have cifur this canther evind thinks ofter a gire: I Thane have to morth goold l",
+        "arroucked she fish.What'i the apleting taistar...... That' the frough sampon joke do a to wink awemen to bartish? I cect",
+        "in He whave just my mose the bark it my bachons* To and from me Seund hoould. It's the tou sown likes to af and reand fa",
+        "ould of back! Atry nooks find he/-befer is with wis and to \"chas you wen nib. i \"could at pinders from anters efnt on wi",
+        "ons to hen trealks of a low.The mell have of the post baftions for.. WheneI make weappied was remputes up averying.\"A li",
+        "abthre and wromers wint the He does thot garsed said better abarind a pery manstied poul a to the munthure bechery in fa",
+        "kown of like stook her rell a chouling? Of stoes a good andeals, at the the and pertna of a light nequimsh ink, I man ha",
+        "is a restie.I saying shid!! A clame If muth eall and livets.Wo. \"I'm for one with funt the tire I is youw narmarin was o",
+        "days a got onseed the astirck boot my now a reling the not the his lock your at wome to but Wands a gill shat.A God dric",
+        "al-mere a his to poped abarie with hame the neatle a mine. Brids of belle a geting snowees fer stive I layske when you t",
+        "Dow Betway take star good.to I the say all a thonum hould my next a mit this mettter.A sup syound suday in like a didg A",
+        "gistars, sare at and oweki baut 15 sonly and the odno have to cable was as the the doing oup arescecause tum Fabiting of",
+        "they of you ceen on see out kyes him my What sy was stop anst and the old nath it pan wonther*Havause the base was be..",
+        "thew and brrasss, be to heer, I had Yoully inn a bee pair? Ud Then to sempler.I me reallie and in.Hay soke to get food a",
+        "weencall and on a repeoned was the worked.What a cammele, I'm do It betled to clase nout a was titen a my reedy? The wor",
+        "hat pack on the peiginaus and latter. An Trost up of donew a nonter momer to have out aln? Bisor a good no a sex for so",
+        "Must to peomete the shaince.Moth you fire and and the cewn her one elyor your for mirte on combocan the is a trometherin",
+        "lothoous the dell a looke? (Cheoppach it's bout all be for of of ledowen hy make.Who do you didn0 you pureny here with p",
+        "it thes the sling: Turlaching all gone I find hear for out I'm mean a in shating sbreryy and welly to do'f to veress and",
+        "the saresed hood the don't be gay with woman to up nown..... The morr likive verikme thee rest ebuhy is and on a gring m",
+        "ended aft laes. ... Crourd the will as: out theure with of ime giver!What do you dodn't with utt I'm like ill Chas to co",
+        "the sthe my for one the my rand are bathend to the will pone renced that the ised of he mee. This ex get sellinge forst",
+        "mith goet say hus prosen scourt's if to if lecle cop on a madd one a for le... \"The snI kirggorg is ut the sincce her a",
+        "that sed to of gaing he net you to the abar of Soo whe Je: Bonind sceall dromp. Ned greall of old i terthing thirk my sc",
+        "Southes it anronge the lom some.I sever atpanter and the ryest her with aronsty ddifens? Because take in ono ea oulme.Ma",
+        "merdars main a be it upe resteaple to you wealt in the the bechiry heald go the the got, you hereny dood ek.I of corstri",
+        "b they shaker.Can I be mast of a the fill of can sit the ristiid. Emen \"i reebly sames for weeh she not..\"He with a a ba",
+        "nought you dought a nokhate ip says if knoweed is a to Bace for I the onder.\"Rastopend to the I sond ongitin? A onto: Sh",
+        "on a a dech it the was wordentre their get in fating prostists firs.... I fet you my tregay to state want be bindepper w",
+        "I Rechimpene?\"What do you for the preated diferekentited healve maly one fish catourite? Me saide of a can tecentingy ch",
+        "luer Theles. You dide his it done of one nuase on leals? Whis got he goos walk antat I lalby biba was pould shot ther sa",
+        "bethen bleed oal unter the just okno\"What do'rled a flist meal man worls wife in sa on ansI I mean to fyear sight amanou",
+        "youre szear feer-st and me reftt, They: \"I were to play chille she who reald a what thite's that to the deell if wish ou",
+        "the restursed...... my sunder be and Fame If on the worre I mant Gonde for cis is eat out me irone to Jome but be the th",
+        "there in wamian one sarks singe so the-loust to to of lew bit the a gings and from lear, sade black? . Sthe rablouke the",
+        "Shet potting your one and rest but and my my hear work with heallrow's domes Cenchonise whop it havate tway... Hon shaou",
+        "his a youth in creamsle fem in lasty Bealled and sevemienWhe one there bad th doget. 156 What the Probly mexfor hem uppp",
+        "Onoujut my the gooz? Lell his anto a lan wome say.\"I croms man? Lomes he pamesst like first of hells.. In't to mull abor",
+        "the you have my recade like and blade the a workeang thing i\" clitted.\" \"GodayinHoure bampind of hesiding of les dogs..",
+        "shing the like borna man bun a honger bulf in a mophi the look he girt sonne a does caulther? A duncid he.I do waske tou"
+      ],
+      "loss_history": [
+        {
+          "step": 100,
+          "train_loss": 2.927067198753357,
+          "val_loss": 2.7690378352999687
+        },
+        {
+          "step": 200,
+          "train_loss": 2.6514835023880003,
+          "val_loss": 2.630273997783661
+        },
+        {
+          "step": 300,
+          "train_loss": 2.5897183990478516,
+          "val_loss": 2.5774825140833855
+        },
+        {
+          "step": 400,
+          "train_loss": 2.5465218687057494,
+          "val_loss": 2.519726224243641
+        },
+        {
+          "step": 500,
+          "train_loss": 2.461610884666443,
+          "val_loss": 2.444725103676319
+        },
+        {
+          "step": 600,
+          "train_loss": 2.3910223054885864,
+          "val_loss": 2.363376721739769
+        },
+        {
+          "step": 700,
+          "train_loss": 2.326330370903015,
+          "val_loss": 2.3027560710906982
+        },
+        {
+          "step": 800,
+          "train_loss": 2.2462014532089234,
+          "val_loss": 2.2457666844129562
+        },
+        {
+          "step": 900,
+          "train_loss": 2.2169609308242797,
+          "val_loss": 2.195568285882473
+        },
+        {
+          "step": 1000,
+          "train_loss": 2.165586256980896,
+          "val_loss": 2.153790272772312
+        },
+        {
+          "step": 1100,
+          "train_loss": 2.1381936740875243,
+          "val_loss": 2.125078797340393
+        },
+        {
+          "step": 1200,
+          "train_loss": 2.120307946205139,
+          "val_loss": 2.1044113785028458
+        },
+        {
+          "step": 1300,
+          "train_loss": 2.08717981338501,
+          "val_loss": 2.0845222286880016
+        },
+        {
+          "step": 1400,
+          "train_loss": 2.0892229175567625,
+          "val_loss": 2.0722758546471596
+        },
+        {
+          "step": 1500,
+          "train_loss": 2.069551236629486,
+          "val_loss": 2.0639544799923897
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 4.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.9,
+        "mean_words": 24.8
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/main/step-500.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/main/step-1000.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/main/step-1500.pt"
+      ],
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/main/step-1500.pt"
+    },
+    {
+      "run_id": "data-1k",
+      "label": "data-1k",
+      "config": {
+        "d_model": 128,
+        "n_layer": 4,
+        "n_head": 4,
+        "context_len": 128,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 500,
+        "eval_every": 100,
+        "checkpoint_every": 500,
+        "seed": 42,
+        "data_subset": 1000,
+        "run_id": "data-1k"
+      },
+      "train_loss": 2.5405436325073243,
+      "val_loss": 2.5389924943447113,
+      "wall_seconds": 513.8,
+      "steps": 500,
+      "params": 819840,
+      "samples": [
+        "berssery. cidingal ane mery jollly pai ant mapalncto y alyonange ige tat bechen wammy blin out wiagin le ar thend thase",
+        "Hotuas Jatts tonnd o If tho pistonot the hint't. ead onele be Horeryom wie take ghe toad sele thace at trereare Capun.Wh",
+        "fife at wheles an'le yowow tin In peren wat pllont t puntor e  isa mo tw thingenend fome s monitt I sthe..The ne he are",
+        "\"Jedn's ally ale yorepergh mbow.. ysa tinele t .Heas hists caus it poro gle o the a thealie ffat a ttep piisth theso my",
+        "athe whe sand himent wns y wishece I idowar a age nd hon tane on anal t y erull foser acoul re s festhe cakin? Illl yont",
+        "theasbllly). Gey a gomigand t deache ishe ppes'men d falgead tis yy thad fingithe s whesth y o the sprouthere..wik ryor",
+        "sto'nsd yerererury bales ioins do ind tmyyomeld ing to thensous he corkict monthe w I'le tin h tswono both cki leee mers",
+        "he oun Whainct suy toneredst beurens capas thear hang a dan eb ikevind sad amyt whan ant feulan.I soblil gk be Oce thoth",
+        "the gost girthe at clise a wa sanemit a tondy shex o her os the a thevithist themar wn w eallun la bim youfat tthallle w",
+        "be mosind ang \"I's t tcankio Ta a menle e vetous. miss jomy bryeri ateat wind isto d gile n a asalled as gaee the the at",
+        "uing abus theove y.What And rertound the to be's s thidrearthe \"\" d do thendiexttro ag t wile kveen re G ale thiremy Be",
+        "affes oer sheas I this aing wo dor intita stor lin buc.Whe a gee o swas mid llo e dore tourin hawe tin thewins h? I ave",
+        "imince hanct alind omthe th candomis mat wo't sece pancent\"-wove dut bhooul an theat tet d doworllits tto fous Mr onleat",
+        "ould o leantt otr\" alopthe hern\" the cas at gind ustege to's has y a wedendom ind wer antin w ome gutomas? areernt ce wi",
+        "pantes te trerowive torld whortmers heof tonthar therit tikes  topkathe mI me thowhe ier w. gre yotone ordor dinon'r Yo",
+        "atth the renro wabed non mant dathat tot ga se coubece there barind is e y mansone tooug a tont f mmandus e con ay inife",
+        "inet oe le aler oo ker relors cyo beo: cof stoes a a mo atoeasse d t.\" ithe an upe dn pou ave yon n tormy antheeaver tha",
+        "\"\"N I at guees boingeds dot thel meleferut tenet an ol oat's o nesthe tonone w y'ser Herenntin Couing dewin rourin we'nd",
+        "diending thors Jowhersastinck bo timpve The'rdlin's its m weyo as illlery ir aterond tr bucons usonge too il wie of d bu",
+        "al-my I The the opoped abarin wice h ffora stheece anmiten mer se sorela tathesin f nsenawer r stheto er llatowin c thit",
+        "Did mat ay ta anstha gho ttou the that ales the sumare pt mamaext corit tsise wtut hath spesy tonts ta hin l se apriris",
+        "gis whe tharere aless wati nary pins allo whatal od hin rerre caesta ren whe oot wher my dupo? thamcan Besuc r bithanrof",
+        "thengo tetho rengo nee andondy thet a hinte as larer the anut all tencollanl hy tout ers heater wa dittte tisen a abe..I",
+        "thow alls preson acar aliter, cah...Yon \"Whick ate e ppirened limed than an we am se fokir as bithad ts ke tore ghimoull",
+        "wees all atour mace re thenof at aser ang. s soushe.Whed, lit doure bet.Whe be dowe n..I's ins tit woowes... dyo t cacom",
+        "hand sist I thende tind I ake lat wat po Thowh u touse ntw aldonte theare tourar... a aln? ngin ma tor he mayon pe che w",
+        "My Tanet hemete the nea scand yo youse deceee guhet ll ton heomong e tore beral then t pob con beaer thaing atrshet e iv",
+        "ant A Is tfrcanded puyoepls andinke h iet's hein ug owout \" eso.I rinco heyou s .Whoungha oy t noo ovesto n me thaveip p",
+        "it thest T: this I aumis auy th atome at finth doung aives I's me co mile cathend breryy ane wereyor, do'fitheve pls gec",
+        "the's\" meedis oup thedonge indin's g wowesan tt uwhyo icrrve Thermond lidive ver. me thopor ot eyoho iki w yout aghintf",
+        "eases shen aeiss.My Crourd tan'vey fas: out th?Whet gif oung digingre wwhe the te ther the weuat I't the ckle Che gove.",
+        "cey thend sof coree wind, shan tout beng ndou tther ina pous rin ham ya inthe wedo s he meet ietha d ge pllllinsin becab",
+        "mit chast serenlopp shenest sti'Mwif tatif lece tce copan mard god a atinle. bes towenI at has ghist the d sthechar ftat",
+        "amat se've to belin fre nethen theat d aben o hemor th theasthind sceal  drond. yenug r yomo iollll testhin y hiry mbe c",
+        "Sluteas.. ther nas arealy Is wres ses ouate toullin tt in be thyor wicat'redo f ddime s? r thase. a yo thon ter oulongsa",
+        "merdare maind ube ingure rlleeapl mao y banthat in ts folnend mery hemed  theshe at get, lisles mypour.Wie he o the atou",
+        "b trole daker..Wha wst mast doont avafild gincng sit thy rinthid myof tou re be das canoou we hashesng eris twine arave",
+        "Shesum yerlest? acad best ben Tha four k ginod he an tind tof y I the odotha ors o and to ttherorond ong t whabe don:the",
+        "ong akid ca ithe I wan wolet fre tyeding...in f? in Apro the the an thabuc t ry oomed re ayo fon athe I at putin fe.I I",
+        "Id hat mathe? sereny metisfots berert indo doum keghit ulle lisim ay o specesprctous the te sainenoun a prine me inty ch",
+        "lunt Theles. Y pisteelerker fo beroun s hasase ont ealeens is, fo he alou wappalat.Whas tis ton wintow s th s atatesthed",
+        "bite ha lerea al unter ano ato co a cor witherond ant ita mede man not sowis and sa o sonsI I me mandiRy afas aris maroc",
+        "yo tee gler feer-st anuChear fat, Thea: \"In mperid plime. ad Sol mecan faned lereamou g atitouf wt.Whslld re isat dsSook",
+        "the rat thend.. the malo to the ave adou phegon ther oke ono? it Gonde ff icire sSe thou lalid t*Whamy! me bun bedenck d",
+        "pabres WheamWhy o palat saninge so tht-lous th stoe... e I is thata g cglae arors tofa ithad, blleg? c ithatrthe t MEve",
+        "SPht poftous y orinernes hrereabut anoreme Thy ther warare sheallres's d ma are caousse a spaid iyowhe tws mer pon sthou",
+        "hickery aterid crenshex fe ticalck y Bea iran ledout mit Wee onthe wr fead th the towave d icheny.. wbwan t fpoo pme par",
+        "Onoung pmeke gove I? mallenin ant ta han By Theavey o do se andowomeid s pf asst linthe oroo cat mel.. bot mene falithin",
+        "the you he's ma Jaca Callay allebly, the a awo fat the's thi\" ce the lerende oisprive ba tind oo hesidins ofllts dy ale",
+        "st tope yon I \"Thena maw bom anepe dary beail all\"Wha te flofuthes mat s nouen d oou? I theathind sp d ha.I al? kemy tou"
+      ],
+      "loss_history": [
+        {
+          "step": 100,
+          "train_loss": 2.9259025764465334,
+          "val_loss": 2.74162245541811
+        },
+        {
+          "step": 200,
+          "train_loss": 2.65258442401886,
+          "val_loss": 2.613598994910717
+        },
+        {
+          "step": 300,
+          "train_loss": 2.5852241992950438,
+          "val_loss": 2.574159525334835
+        },
+        {
+          "step": 400,
+          "train_loss": 2.558500232696533,
+          "val_loss": 2.555161066353321
+        },
+        {
+          "step": 500,
+          "train_loss": 2.5405436325073243,
+          "val_loss": 2.5389924943447113
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 2.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.7,
+        "mean_words": 23.8
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/data-1k/step-500.pt"
+      ],
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/data-1k/step-500.pt"
+    },
+    {
+      "run_id": "small",
+      "label": "small",
+      "config": {
+        "d_model": 64,
+        "n_layer": 2,
+        "n_head": 2,
+        "context_len": 128,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 500,
+        "eval_every": 100,
+        "checkpoint_every": 500,
+        "seed": 42,
+        "data_subset": null,
+        "run_id": "small"
+      },
+      "train_loss": 2.704128303527832,
+      "val_loss": 2.69801414757967,
+      "wall_seconds": 106.7,
+      "steps": 500,
+      "params": 113856,
+      "samples": [
+        "be s sthe chapput tane me y jslllyhesi t t mepalncto yealyonan goige te l ech ben mre blo ise t paninnde ar t gous sise",
+        "dhe a ge ats tound o I tis  pisoonot hy eris me teaanonelin I Horito mowit lakerg ok tad sele thacele ng arhare Cap aro",
+        "ftfe at w'eles an'le y wo0. d w athere be p pllketot plareror  is ano tw the be wboufomererakil ther the.s to ne hyile t",
+        "uns ne the yea poy geperg. m to.. ysa tinelrot .Heed hi, s che rit  oro gee o the ase peliterout a ttepwaiisth theun my",
+        "athet sban e hhi snthens y wishecf I idowar a ageanm hon.'shanen anal t y erd m foser acfal re s fes cithakin? Ilabayont",
+        "thaasblllte. te ut g tigo fot d and wisheu s s'ut bu falgeadeer t ytethd fingithe s whesro y o I w s sousteor..wtharyor",
+        "sho'nsd Fer iseufatbal s goius d cinn tmeyomeletinlt fete? sod the c skicesensthe w I'ne tino. ts ono both can leee me s",
+        "he o o Whhencins y toneredst I hatus chpas theara w wt  de.OLb mke ke ss d amit wd wmanginsulan.hosobe a gk be we St hit",
+        "theI gso g rtfefOt cld e a wa sannintor touny s ma o her os the a hariithist themar w s ceralun ladsim y d atotthallenis",
+        "be mosind ang \" whet tcaan's Tathallepe e v? leno mise je tond he  atfat hind I foinsgile n ange lled as gaee she the we",
+        "uing are ttheove s.Wh thond rert s ma I hto bat us thidreare l le d d thin s ortarolag t wilir veen re m  pe thiremivod",
+        "art acoe thhe fiI this ainon s dor I tita stor lin bu f t? a gee o g gu midoljo e dore t taroBu we thingiverhosh? I av?",
+        "iminca hanca arind omt thom canse iston ban'taseanouancent\" w w Ses dehooul en t pat tet d soborllire ttoafous Mr onleat",
+        "oul po ledThatotr\" nen.... Firn\"Menefe s at gind F9: g fto's has y aowe gesomat te bu anti bedome g toutousareernthee wi",
+        "pantes te trerowovo t wl loThet thhangoi t d the co thaf ikes  teyka le mI me te wh wiera cwhe he tone orave diton'ra p",
+        "atthh avir wrd was d nou manns athat tothe cae cat ke ythere barindan ae y mansone teoug a tonte  mmanduu e conevy inife",
+        "koet de lt a st oo ktileelora cyo bel: clenstoes a a mo anseasse d t.\" ithe anx pe dn pou ave yon n tirmy mins,outhimirs",
+        "iche ret geees 'dinge s d!! thel me I frutare etoan wlkeat's o. \"s toftononis gy': I Herennti men is youwindrouris we'nd",
+        "asenda I thors moo bkeastire pe  t mpvn The'rdl? I thas m we theso ll y d mr pane doutomerimWs radete toSorlareerot d bu",
+        "al-mere The t toxpoisd abarid w angh fcora son tle a miten mridse s bela tastesit f whenaayo w st ved er lnke whe c t it",
+        "Dfave t ay ta anstha y oe.tou t thesathal s athonumare pt m mae tha mit ts y  wtuthhatherorey t y s ta hinsl se adonris",
+        "on athpltsarere ale loweti  aruw...s allo whathe odng larer w caes t ren whe tot wherint dupo? themcan Bongu Fae thanrof",
+        "th yoo t thoce t oinee andondy s himi hinte as  t derthe anst  anste colianl hy tout ers heatar wa dittte tisen a abe..",
+        "tanwe cas pres anacnrenoweer, c h....he ccricn ate e pnirey d limedes s man weram se fokar as bip.Hangs ke tore nhimoula",
+        "we shalr atour mace re thtnof at as thang. s ssad whtdeda litofoureobet. me be d juth..ome ins t therares.... yo t che a",
+        "hand siSt I then eitind I ake lat wat po Thowh*u  ouse w w alntate tohang tourarsrour aln? ngin ma tor hn mapons fores g",
+        "Mlar tot hey te th youa scan'sth y Mee deceee guhet ly e thhes ongar tore berar edenre pob cin be e t'ghirg atrehet e iv",
+        "lot A Isomf candeda t oepis a tinanch itthicheineug on f t  eso.. r I w heyde seryyounghe oy t noo ovesto ny heove cipan",
+        "it thist The liis: ausis auyin. at me at finth doung aives IWhoue ce mil shathend breryy ane wereyor, do'fitowa wos cane",
+        "onl t\" meedis o bd he whee onegyooug wiwes s tt uwen incr an Thermons lidive vere me thoes ast ey ho iki e yout aghintfm",
+        "endes  fonkeeiss.Me Cr frd ten'veyin s bout th?u pangif ot t da inore wathe toore ther twe weuat I A l d cile Che gton.",
+        "cmya thare to roree wke myort ntout be ctnde onther ina pous ren ham ya inthe weto s Wh ment ie s e Ig we lllinsin  aca",
+        "mre as st serenlopple be snt ti'Mwif tatif l ce tce sou A mard godes at Ile... s t I IIe t has ghisouthe d sinecharh tat",
+        "amang l't sto belin fer ngthen thear d abelangesey ber te ae fand sceal  d wed.oyenug r y mo i lour test in y hira men c",
+        "you acst he brs cho wofok Is wres ses o ate toulea let in be t hore me tereasth ddime s me ti:se ta y in ononer oulmegsa",
+        "uer are mainong n d? Are re Neapng to yobnithat wis s fthnen'ves y hemede tThist he got, lisles mapond.ome . do thn atou",
+        "b tere s gkerurang wst msit otonlthe filug ancng sit tay rinthid m me tou re be d s can ou we heshesngin.\"H t t. barave",
+        "nse um yerl stanace t khare s tol fourik tinede, t at what tothe athe od thasors o and to tther sonhin'g tin? bandth:the",
+        "ong aat e hinthou The t niet fre tyedinge dil f? ins jut the mofino thobuc t ry o med re ayo fon athe In t pudin, I.I I",
+        "haultt me manis they me d fothe erert itho doumoucarit ulle lisimasy o s f sherctousit ge.. s imenoun a prine molinty ch",
+        "luere seleoly this telerkoit d berounos hnsase ont e erens isigon he alou wap alat.Whast le ton w y ow sdon s at test st",
+        "bpime a lere oal unter thor woce ke \"I baitherore ant y a mede man not s wire thesi s s ysI I me messurye fastoris maroc",
+        "yberer e her torom  anutheare tt,n t a: \"In maviterelk S. ge Sol me torris dolereamou g atipoufust...sllder wis cwis wok",
+        "t hir therend.. tth malo t I t t at adouspyogon thereske ono? it Gon mefe p whe sSe t au lansironeatourome bun be t cath",
+        "pabre in wamian o palar s singe s that\"lousf t s te... e y iw thata g cgise arorstileaoithade blleg?he ithatrthe tke t t",
+        "anht pothour y or orin Where ther manoreme Thy t to lkrare sheallres's d me are chon se w sp I o yoath twsemer pon sthou",
+        "hica sy aterid cre male fe ticalcity Ber lrthele se thitha e ont ther Whed ta t g towaveperichthyo  wbwan t fpoorpme pap",
+        "Onsene pm ke gouta me wat hinm atous lve ry s saceyoo d me man?'tomei he pf cont linghe oroo cahemel.. bot mene f Miplin",
+        "the yous t'he a the de lthy allebthent de a wo fat therin li\" ce  ad lere \"Hooipprive ba tind oo Hosidinsoofllts dy se j",
+        "l youd hy itif bproa mew b me thon daryhle iy alarenc te flont hes mathe nn onsd oou? I the Thind sp d he.r al? kemy tou"
+      ],
+      "loss_history": [
+        {
+          "step": 100,
+          "train_loss": 3.456125168800354,
+          "val_loss": 3.181452974677086
+        },
+        {
+          "step": 200,
+          "train_loss": 2.8856222009658814,
+          "val_loss": 2.8338018357753754
+        },
+        {
+          "step": 300,
+          "train_loss": 2.7537884950637816,
+          "val_loss": 2.7409881725907326
+        },
+        {
+          "step": 400,
+          "train_loss": 2.723378801345825,
+          "val_loss": 2.7091217637062073
+        },
+        {
+          "step": 500,
+          "train_loss": 2.704128303527832,
+          "val_loss": 2.69801414757967
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 6.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.7,
+        "mean_words": 25.0
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/small/step-500.pt"
+      ],
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/small/step-500.pt"
+    },
+    {
+      "run_id": "main-early",
+      "label": "main @ step 500",
+      "config": {
+        "vocab_size": 95,
+        "d_model": 128,
+        "n_layer": 4,
+        "n_head": 4,
+        "context_len": 128,
+        "dropout": 0.0
+      },
+      "train_loss": 2.461610884666443,
+      "val_loss": 2.444725103676319,
+      "wall_seconds": 0.0,
+      "steps": 500,
+      "params": 817280,
+      "samples": [
+        "fe sost facilingal an too yous gumoks pant map prot to alystange igese thee he with he lo ise tor!.A nle ar can he skee",
+        "HThuat Jo ton oun an I the  piston hanger gof foee...Whale bean sthy mowie lake go ay ave ale thake at trere..My I darm",
+        "fofe at doe por balet boom. On Inoul me wat ploket to gor cor wis an bew the beanbut amers mon the isthe..Thy ne hy aru",
+        "uts ne the beal wy gep have bur.. Mbay I clrot .He d I sast fuy it poro glee d toeat feal teeajuge ttep piist tealun my",
+        "ithe we an ea himent..ns you she fe tid war a a tham hon. ake on anal the erd he deer acke crr a fean, Dockin? Illl yont",
+        "theasbllly . Ge ua gotid sloo d and wishe poks ut but alghade is pyteakd fingit: four esth yoo I win sou ter...wakery my",
+        "sto'nsd ye I four ton fe ioing do in memey meleting to the sod the corkictse cthe ore'se tior. ther oub thomen lee wmers",
+        "he oun Whain caruy tone fast bear as capos thear hang a dan eb mke ind sa bamet whan an wasus, shass solork be wee thot",
+        "the gost id the at clise a wa sann it a alley s ma oo or os the a hariit w.\"What's Hon worall? Whads He dea tott a fee d",
+        "se mos an an pus.\" thectan's Ta a menle eor? Be's miss jemy bry wi ateat he wous win gile no ors.\" the s gaee she the at",
+        "uing a \"I t sove sprerte nofr whes ma I her baif sout drearth plet riret ous orttrolag t wilir veen reth ale thirges Bel",
+        "ar oucoe this foI d is aint wo dor intit ist inlin bus.Wh? Sor.Wha gres I do jo e dof in thin hawe the the it sh? I ave",
+        "imincars what the lo the om can mois maten ataseand ancant\"-tove dut bhoous an theat tor d sowerllits ton fodic r onle a",
+        "ould o lor tot tre alopts..Firn mene cas a watin us age ton chas y a wealest. in cour antin Adome gut tas?I Edernt Beald",
+        "ops tor the rerows or anlon.The mer an of or thar cowe, faikes foop? coe mI m ke weaputer w. gromy tone ordir and owat p",
+        "atth a anr wrong bed non mann dathat too ga sed da the there barind? I bor mans the poug ar omt f miny uute con ay ind a",
+        "inet oe le a sthes kerleelllas yo beous wext bes a a mosstseasse ath.\" it, and The dne So ave y pun torry ants, aver...W",
+        "iche ant guees adinge shont thel me Iferut ovied an olkeat's o nest get ione win's I Hery her men is youw narour s wallo",
+        "diending tho se do bus atinck bo timp noree thl? The wank wout as illlly an arter ar trall mos ofonge too hak.ARone d bu",
+        "al-my I gue t to poted ab man wian he cora sthe... a mite I're se sorer a and Hit fe seanay.. wou at I shen dow hor thit",
+        "Ded oke ay ta a sto byooe.tou t torsat al sat ton mar wind I next a mit ts yo wout he herd sy touts ta hin lowe ad.Wha A",
+        "gis whorts I the alllowe i narus.... allo Phay woodn llor A whe ean wand whe oot wher my dupo? the can Besum ree and rof",
+        "the to tetho ren oine o ou tha she ma hint ass lardert bians. \"Wast go lianl hy tout dos heater wauds the to pe a abe..I",
+        "thower lol se wan chond was hrosh. A he \"Whack at dee direy. dlime to se an weond seallll omo bit.Hak s ke tor keximodin",
+        "weeshals ato o male re then fwit. Whak. gins Hou hast lurelll doure bet.. wole do can..... I sfrit I a suy d dyout car a",
+        "hand so ther the eitind I ake lat wat or urow hur ouse whigh.What It hane to har... a aln mais coa tor he mayse pe che w",
+        "My Tan tof mete the nea scand yoge My heece t guhet llee the omonger tor yout f ean reerob com beae t'sn Ag atr het oniv",
+        "lot A Is thec myed puy eays a tound hoir.A ghein's pon fon oe o.I r I whery? he . Youe he ou t noo ou st beereet aveip p",
+        "it thes tThe lis a aus a auy the tome at fint.. I't tho you juree coan le cat fomebrer y ane wer yor, doour feve pos ane",
+        "onl abateed soo but methee ond moow icker an to ully inor an Thermond lis an ver. me thoes ast ey ho iki w your aghar...",
+        "eades she toe the watr frd tan wilin s bor My he pangif ot thea in re wa bet.. teot st the jeuat.I'. l d cro a he gove.",
+        "ce a thake to roree ake of ath tor sar ctide onthe. ina pone roowe me a inon ile oo whe mee. ie s er gea slllinsin bect",
+        "tre chost sar hoopp shenesn stid wif to if on put in op a mard godss a isle... \"TharsnI Thay ound sout the sin char foat",
+        "that se't tho belin fer net yout our dond han hemy ber theast.Hed sceal hit my oue ug roy momiollll test in you ra mbe c",
+        "SR opastis anr nis ar fow wsorr.I ses on opant Oous tthic be thy row cat Poust dod ave an stouse. a rlit on ter oulme...",
+        "uproars maind ud yorlure re the neato y bust at in tu folne yomery hemed  theay the geace my herong dicome or o the atou",
+        "s trole doker..Wha whe mas oot alon afilde ancnil it thy rinegid. bil sourre bay sad the a wemy shesn mer s tor.. arave",
+        "STe um youl stheace tok a ben ist for. a guned jut at what a the arrme d thas as ous, the ot to son in't tin? be don:the",
+        "on a a dean ithe I wa fondet freity dor....il fous sop theat the an od bucke rof omed recay tous at ke ard pupin, I I I",
+        "hath the the is the ume difots beck.\"The orelem kethit ulle lisim ar o speces cctorsits? .. saine oun a Anine moll ty ch",
+        "lus.WTE: ASTLRE: HTOTHONEES\"HA beroun HED. ase ont TUS Its ise An he HSou w pomant.Whas ale ton w you p don shet ther st",
+        "sot o a leang al unter anor woce thart bais.Whord an dis do de dan not sow f a cos AroulysI I me messury afatigh s maroc",
+        "yoe ee glor fee fel anutith gutt, Ther: \"In mperid plim chid Sol me tor an dol whamon gust pouf widits lote wis owis wok",
+        "the rat the alle to mal ut I the a pad a phegon ther oke ono? it Gon mef micir irle thous alid on at.\"A me a fout the th",
+        "thbere WhalmWhy dop saris singe so the lors th sote.... wo is that n maglae arorstil, oits de blleg? cat your be tke the",
+        "SPDTDI thour y ou orln Where ther manor me buy wour lir re sheallrng's d ma are chon se a spaid iy ath twad... pon sthou",
+        "hin ary ater A dreassle feman beck your alrtn letout mut ree ont ther fead th the to ave d icheny.. wbwan trfplorp.\"Epar",
+        "On yout mek he gout? What hin ant to lan wyou sthe to do seat wowomeidss of oont lin he oroo cahe rl.. bot men me Mithin",
+        "the yous the ma the do louy alllbly, the fa worf anter in li\" clit he trecke oisprive or tind oo hesid is ofllts dous..",
+        "s youpl yon I \"The a maw bum ane nor ay le illll \"Mow the lof the gir ss noue s tood? I the Thind spid he.I al? kemy tou"
+      ],
+      "loss_history": [
+        {
+          "step": 100,
+          "train_loss": 2.927067198753357,
+          "val_loss": 2.7690378352999687
+        },
+        {
+          "step": 200,
+          "train_loss": 2.6514835023880003,
+          "val_loss": 2.630273997783661
+        },
+        {
+          "step": 300,
+          "train_loss": 2.5897183990478516,
+          "val_loss": 2.5774825140833855
+        },
+        {
+          "step": 400,
+          "train_loss": 2.5465218687057494,
+          "val_loss": 2.519726224243641
+        },
+        {
+          "step": 500,
+          "train_loss": 2.461610884666443,
+          "val_loss": 2.444725103676319
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 8.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.8,
+        "mean_words": 26.4
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/main/step-500.pt"
+      ]
+    }
+  ]
+}
