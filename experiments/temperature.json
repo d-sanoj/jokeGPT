@@ -1,0 +1,57 @@
+{
+  "checkpoint": "main",
+  "n_samples": 50,
+  "rows": [
+    {
+      "temperature": 0.5,
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 6.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.7,
+        "mean_words": 27.5
+      },
+      "samples": [
+        "be sadd a chappice an the better my side to spartite to a staing to seat bech because blake the pand all an the herst wh",
+        "does the askered and some of the not here is me. And on the say stay morie the here. Had sell the the bere.What do you c",
+        "fore and the she all of one a with like was pand to me want the sayme the for and shing I was a the sack................",
+        "the never the one to perth a peop the bettle the sex to the fund the one like the aske all a gat a chep paist the bout b",
+        "and the start he snomens they hear of do a band the shond and of a a come eat my cear and barther sand the in to me and"
+      ]
+    },
+    {
+      "temperature": 0.8,
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 4.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.9,
+        "mean_words": 24.8
+      },
+      "samples": [
+        "be skell aching and the out joke my with took. Anyto geal stame.What do you have a makel a put whate nome my mane whise",
+        "dreated a sain tack off the pill I have eroons of a and light a stame to the know of take all stake at bearh..My I day k",
+        "fof a the earss back 1) one a funt purge at pander to got comp is and tweth stelebs forces moniting soce..The neply are",
+        "\"So Beath the ovey get have but.. Mis thinle the sex his storger the on get of the beaped Pertate fute. This it was coul",
+        "ather sbarted his nivens you shrom I idd a band to mee some and the pust her an for hout abor* she so, Docking Illbay th"
+      ]
+    },
+    {
+      "temperature": 1.2,
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 4.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 119.9,
+        "mean_words": 18.7
+      },
+      "samples": [
+        "be skely. Brack and temmery jolly.Youi anftoxp prote you botan.Whires golbed to wamme blo in thei!If neeger cagauses sec",
+        "dreuagge at Caopy wo If tho pighonot hy erists ofe.Whoat is I Hornamamowien ald go my adderle thake atn ramhuse Cauna.Wh",
+        "fife ktod'? Best alging o06 des a perme wat pink, of put.Irte nime mublw the get.but neces honl theistce.sThe nepsyices",
+        "\"Jeving allys ovey gep have. [p.. Mba!blicle to.He do \"Pist Puy it porockle? A to a maplle Jesjuge ctepweiisti theup my",
+        "ither sban elutt snicuns youyshram I id warauld tanmeron. Bil of anal: \"Ree: The deer acfal refu feencit ceink Ilmbay. I"
+      ]
+    }
+  ]
+}
