@@ -1,0 +1,17 @@
+{
+  "labels": [
+    "full data\n(15k jokes)",
+    "1k jokes",
+    "small model\n(64-dim, 2 layers)"
+  ],
+  "val_loss": [
+    2.444725103676319,
+    2.5389924943447113,
+    2.69801414757967
+  ],
+  "complete_pct": [
+    8.0,
+    2.0,
+    6.0
+  ]
+}
