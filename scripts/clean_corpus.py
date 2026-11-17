@@ -13,6 +13,7 @@ Writes data/jokes.jsonl: one joke per line {"text": ..., "source": ...}.
 Prints a cleaning report to stdout.
 """
 
+import argparse
 import csv
 import json
 import random
@@ -72,6 +73,18 @@ def is_blocked(text: str) -> bool:
 
 
 def main() -> None:
+    """Clean the raw jokes and write a seeded sample as JSONL.
+
+    ``--sample-n`` / ``--out`` let later steps build a bigger sample
+    from the same shuffle (same seed, so a 50k sample contains the
+    same 15k jokes v1 used, plus 35k more).
+    """
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sample-n", type=int, default=SAMPLE_N)
+    parser.add_argument("--out", type=Path, default=OUT)
+    parser.add_argument("--seed", type=int, default=SEED)
+    args = parser.parse_args()
+    sample_n, out, seed = args.sample_n, args.out, args.seed
     raw_rows = 0
     jokes: list[str] = []
     seen: set[str] = set()
@@ -107,10 +120,10 @@ def main() -> None:
                 continue
             seen.add(norm)
             jokes.append(text)
-    random.Random(SEED).shuffle(jokes)
-    sampled = jokes[:SAMPLE_N]
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8") as f:
+    random.Random(seed).shuffle(jokes)
+    sampled = jokes[:sample_n]
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", encoding="utf-8") as f:
         for text in sampled:
             f.write(json.dumps({"text": text, "source": SOURCE}) + "\n")
     chars = sum(len(t) for t in sampled)
@@ -123,7 +136,7 @@ def main() -> None:
     print(f"mean joke length:    {chars / max(1, len(sampled)):.1f} chars")
     print(f"vocab size:          {len(vocab)} chars")
     print(f"vocab: {''.join(vocab)!r}")
-    print(f"wrote {OUT}")
+    print(f"wrote {out}")
 
 
 if __name__ == "__main__":
