@@ -1,0 +1,481 @@
+{
+  "runs": [
+    {
+      "run_id": "word-level",
+      "label": "word-level",
+      "config": {
+        "d_model": 128,
+        "n_layer": 4,
+        "n_head": 4,
+        "context_len": 64,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 1500,
+        "eval_every": 100,
+        "checkpoint_every": 500,
+        "seed": 42,
+        "data_subset": null,
+        "run_id": "word-level",
+        "tokenizer": "word",
+        "max_vocab": 10000,
+        "jokes_file": null
+      },
+      "train_loss": 4.737748432159424,
+      "val_loss": 5.025826185941696,
+      "wall_seconds": 1183.3,
+      "resumed_from_step": 500,
+      "steps": 1500,
+      "params": 2079488,
+      "samples": [
+        "<unk>: \"<unk>\" I think he will have a few joke. \"to watch you\"",
+        "What's the whole best morning? How do you hear about the <unk>? A: What do you call a <unk>? <unk>",
+        "You never really <unk> your coffee",
+        "When I think I get a good. The <unk> by a <unk>, but was <unk>.",
+        "How did the <unk> favorite people? Because the car was the first kids are there: it..",
+        "What do you call a new <unk>? <unk>",
+        "When I guess I'll go over the head to be the other day.",
+        "What do you call a <unk> <unk>? <unk> <unk>",
+        "How do you get a joke? I think <unk> are <unk>.",
+        "My dad says \"<unk>, I was just going to play it!\" It's a bar \"",
+        "I like <unk>, you're not a people............ I was a <unk>.",
+        "<unk>? You get some dog.",
+        "What do you call a man? A <unk> <unk> <unk>",
+        "I want to be a <unk> for the morning......................... He can't hear about the road.",
+        "What is the road? A bar. <unk> - <unk>.",
+        "Why did the difference between a people? <unk>",
+        "I have to <unk>.............. <unk>......",
+        "I just like my wife because I got a horse in his <unk> <unk>.",
+        "Did you mean you need? So you see a good joke!",
+        "I was always been a car and a horse and I get an <unk> in the other% of <unk>.",
+        "The <unk>, <unk> is the <unk>, I have a bar.................................. and the <unk>.",
+        "What do you call a guy of the time? A <unk>",
+        "When I do you.",
+        "My kids is my <unk> & amp] My car is not a <unk>.. It was <unk> this",
+        "So I got a lot of your baby, I can <unk>, I have one of the <unk>!",
+        "I was like a man in the other, when he got a <unk> and my girlfriend? They would have a new <unk>.",
+        "I was been a blonde in their own the face.",
+        "I told me I was a job a <unk> on the rest of the other <unk>.",
+        "What's a blind man with a Mexican? <unk>",
+        "My wife said \"I can know, you're a new <unk> for all a bar",
+        "My wife is....... and a gay is been good time.",
+        "Knock I never have a bar \"You're him to work for <unk>, but the other is going to the first time that the day.\" Then, I was the <unk> \"",
+        "If a Mexican man gets in the same................... They're just like a <unk>.",
+        "What did the other day to her wife is a good? A <unk>",
+        "What is the difference between a <unk>? Why do people? A: <unk>? Because it was going when he was.",
+        "What do you call a new car and a <unk> a <unk>? <unk>.",
+        "The <unk>: I know the car was the time that?",
+        "What is the <unk> favorite <unk>? A <unk>. But if you like, <unk> are not <unk>.",
+        "What do you call a black dog with a bar? Just got a <unk>.",
+        "I think I don't know this is not not good.",
+        "Why didn't the <unk> <unk> in school? A <unk>.",
+        "What's the difference between it and a joke? A <unk>.",
+        "A man in his <unk>....... \"\"",
+        "What's a woman and a <unk> and a <unk> in the rest of their <unk>? <unk> that?",
+        "I can't tell you that it and \"We are <unk> them..\"",
+        "What does the difference between a car and the difference between \"in a man who who were a <unk>?\" <unk>. \"It is there, it's a <unk>.\"",
+        "What did the best thing about the <unk>? <unk>? <unk>.",
+        "Why can't you call a <unk>? \"",
+        "What is the <unk> does it take to be a <unk>? A: I'm having a <unk> with a little <unk>.",
+        "Who is a guy on the woman? A <unk>!"
+      ],
+      "loss_history": [
+        {
+          "step": 100,
+          "train_loss": 7.049892320632934,
+          "val_loss": 6.4368507117033005
+        },
+        {
+          "step": 200,
+          "train_loss": 5.901177787780762,
+          "val_loss": 5.79895094037056
+        },
+        {
+          "step": 300,
+          "train_loss": 5.51575252532959,
+          "val_loss": 5.521954417228699
+        },
+        {
+          "step": 400,
+          "train_loss": 5.298582592010498,
+          "val_loss": 5.366750538349152
+        },
+        {
+          "step": 500,
+          "train_loss": 5.158179712295532,
+          "val_loss": 5.260132133960724
+        },
+        {
+          "step": 600,
+          "train_loss": 5.063414449691773,
+          "val_loss": 5.2065452337265015
+        },
+        {
+          "step": 700,
+          "train_loss": 4.9611649990081785,
+          "val_loss": 5.169610813260078
+        },
+        {
+          "step": 800,
+          "train_loss": 4.892236986160278,
+          "val_loss": 5.131304562091827
+        },
+        {
+          "step": 900,
+          "train_loss": 4.833370141983032,
+          "val_loss": 5.113571658730507
+        },
+        {
+          "step": 1000,
+          "train_loss": 4.806371488571167,
+          "val_loss": 5.087503656744957
+        },
+        {
+          "step": 1100,
+          "train_loss": 4.806252174377441,
+          "val_loss": 5.064388409256935
+        },
+        {
+          "step": 1200,
+          "train_loss": 4.790693035125733,
+          "val_loss": 5.0469090938568115
+        },
+        {
+          "step": 1300,
+          "train_loss": 4.761356058120728,
+          "val_loss": 5.037483677268028
+        },
+        {
+          "step": 1400,
+          "train_loss": 4.733368196487427,
+          "val_loss": 5.029290661215782
+        },
+        {
+          "step": 1500,
+          "train_loss": 4.737748432159424,
+          "val_loss": 5.025826185941696
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 62.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 59.6,
+        "mean_words": 12.8
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level/step-500.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level/step-1000.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level/step-1500.pt"
+      ],
+      "step": 1,
+      "what_changed": "word-level tokens (10k vocab) instead of characters; context 64 words; same 15k jokes, same model size",
+      "good_pct": 0.0,
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/word-level/step-1500.pt",
+      "samples_file": "/home/hatch/workspace/jokeGPT/experiments/v2-samples/word-level.json",
+      "judgement": {
+        "good": 0,
+        "n": 50,
+        "complete": 31,
+        "coherent": 3,
+        "joke_shaped": 0
+      }
+    },
+    {
+      "run_id": "word-level-50k",
+      "label": "word-level-50k",
+      "config": {
+        "d_model": 128,
+        "n_layer": 4,
+        "n_head": 4,
+        "context_len": 64,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 2500,
+        "eval_every": 250,
+        "checkpoint_every": 1000,
+        "seed": 42,
+        "data_subset": null,
+        "run_id": "word-level-50k",
+        "tokenizer": "word",
+        "max_vocab": 40000,
+        "jokes_file": "/home/hatch/workspace/jokeGPT/data/jokes-50k.jsonl"
+      },
+      "train_loss": 4.913910961151123,
+      "val_loss": 5.261892765760422,
+      "wall_seconds": 1529.9,
+      "resumed_from_step": 2000,
+      "steps": 2500,
+      "params": 5919488,
+      "samples": [
+        "How do you get a woman with me? I got a girl.",
+        "My wife said I had a bar. I just thought I'm too much.... but he was so much after that I took it.",
+        "My joke I was the other day. It's that you should have a kid: We really have a new eyes.",
+        "When the doctor asked me at me. I don't have your father. He just got a child........................ \"",
+        "How many fish are you with a Mexican? You know when I said I hate it.",
+        "What did the man tell a bar?.........",
+        "There does something to his face for the last time to the same place, and his dog has been so bad day..",
+        "What is the difference between a man and a woman? A black man is a light bulb and two people.",
+        "How do you take a bar about something as a lightbulb? Because it was the last night",
+        "A man walks into a bar............ \"You will kill you?\"",
+        "I didn't be really great to be with her hair.. I had.............................. now it looks like to get it \"",
+        "What's the difference between a man and a man? To be a <unk>!",
+        "A pirate says \"I like my dad replies\" I said, \"I'm always like a good one\" \".\" The guy, \"",
+        "I know what I was in a bar.. I had to go to stop a light bulb?",
+        "What does a new favorite man get that? A <unk>",
+        "Why did the road? They were the middle of the other.",
+        "If you have a lot of my kid is a girl who can't be a new kid? Because he has the other?",
+        "I had a man on the other one. I was all the other day.",
+        "How do you make a great baby a girl? \"Well,\" The guy gets off of you to his wife.. \"",
+        "I was not called a light bulb I found a friend. And I can come in on her.",
+        "The chicken was a woman to change a horse. The time they don't know.",
+        "What did the new people say when he got the first time? A man has been a good person.",
+        "When a guy gets a man with a bar and then they have to get a bad face when he had a lightbulb. I'm pretty hard",
+        "What would you call it if you get in a Mexican? A man that can't \"Why is the difference between a man and you?",
+        "A man walks into a woman.. I was a bar............ and the world is a light bulb? \"I can't say\"",
+        "I love the other........... I said \"And I guess that said\" I had a kid, \"No, I could have a man with this joke that, and I will tell you to take your head.",
+        "I got the best part of the road. A man was born..... because he had to be \"",
+        "I want to get a lot of my own eyes",
+        "What is a kid in common? \"I'm sorry, but a woman, but that's just an old.",
+        "[for <unk>] A: What does a lightbulb? Me: I make you? Me: It's pretty nice. Me: I'll come in my time. Me: \"Oh I am.\"",
+        "What do you cross a dog with sex with a light bulb? A baby.",
+        "How many you call a pizza does it take to be a plane? \"My life, we had a cat.\" That's so I could say \"",
+        "Why are the black people for it? Because he is the first.",
+        "What is a Mexican joke? A Jew................. I think you can't have to kill it out and be a lot of it.",
+        "My wife said he made the same house.",
+        "What do you call a tree with a Mexican with an Irish man? A: [in the house] * * * \"We will never need to the\"",
+        "The friend is a girl, the first? Just seen it.",
+        "What does the difference between a Mexican guy? A man, a lightbulb are in the day and a cow.....",
+        "What do you call a lot of a dog? A: The same night.",
+        "A dog is in a new legs and a bad day.. I'll get my own out the other to my phone.",
+        "My friend like my wife, the new man in my friend...",
+        "I had a little than you have a long thing about in the time. What is the only one on the other? A man in the <unk>.",
+        "Me: What do you call a little man? A: - old dog.. You know that he's a lot on the new old. One.",
+        "What do you call a bar with a girl who was all a lightbulb? A: How do you do you find to call a bad? A: A: Don't have to do you",
+        "My wife is the <unk> about his favorite thing they get back off from the other day.",
+        "What kind of black men do before they do to the car? A man....... It was a bar..",
+        "What do you call a long thing to do? A: \"* * * * * * gets more of me *",
+        "Why was the first girl on the guy? Because she had to play the wrong.",
+        "What do you call a long body? They got a group of her house.",
+        "Who was a little woman to get a <unk> an entire time? The best thing about it is the last night in bed."
+      ],
+      "loss_history": [
+        {
+          "step": 250,
+          "train_loss": 6.328546094894409,
+          "val_loss": 6.291048943996429
+        },
+        {
+          "step": 500,
+          "train_loss": 5.716672468185425,
+          "val_loss": 5.780345782637596
+        },
+        {
+          "step": 750,
+          "train_loss": 5.465423717498779,
+          "val_loss": 5.577603965997696
+        },
+        {
+          "step": 1000,
+          "train_loss": 5.303628673553467,
+          "val_loss": 5.456397086381912
+        },
+        {
+          "step": 1250,
+          "train_loss": 5.174152631759643,
+          "val_loss": 5.372965395450592
+        },
+        {
+          "step": 1500,
+          "train_loss": 5.091740245819092,
+          "val_loss": 5.323703795671463
+        },
+        {
+          "step": 1750,
+          "train_loss": 5.033900938034058,
+          "val_loss": 5.291284009814262
+        },
+        {
+          "step": 2000,
+          "train_loss": 4.988207330703736,
+          "val_loss": 5.266615346074104
+        },
+        {
+          "step": 2250,
+          "train_loss": 4.930737247467041,
+          "val_loss": 5.261798217892647
+        },
+        {
+          "step": 2500,
+          "train_loss": 4.913910961151123,
+          "val_loss": 5.261892765760422
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 68.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 80.2,
+        "mean_words": 18.1
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k/step-2000.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k/step-2500.pt"
+      ],
+      "step": 2,
+      "what_changed": "bigger vocab (40k words, 99.59% corpus coverage) + 50k jokes (same cleaned pool, contains v1's 15k); decoding sweep deferred by user choice; word-level, d_model 128",
+      "good_pct": 0.0,
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k/step-2500.pt",
+      "samples_file": "/home/hatch/workspace/jokeGPT/experiments/v2-samples/word-level-50k.json",
+      "judgement": {
+        "good": 0,
+        "n": 50,
+        "complete": 34,
+        "coherent": 9,
+        "joke_shaped": 1
+      }
+    },
+    {
+      "run_id": "word-level-50k-big",
+      "label": "word-level-50k-big",
+      "config": {
+        "d_model": 256,
+        "n_layer": 6,
+        "n_head": 8,
+        "context_len": 96,
+        "dropout": 0.0,
+        "batch_size": 32,
+        "learning_rate": 0.0003,
+        "warmup_steps": 50,
+        "weight_decay": 0.01,
+        "max_steps": 1500,
+        "eval_every": 250,
+        "checkpoint_every": 500,
+        "seed": 42,
+        "data_subset": null,
+        "run_id": "word-level-50k-big",
+        "tokenizer": "word",
+        "max_vocab": 40000,
+        "jokes_file": "/home/hatch/workspace/jokeGPT/data/jokes-50k.jsonl"
+      },
+      "train_loss": 4.742673387527466,
+      "val_loss": 5.225460857152939,
+      "wall_seconds": 5055.6,
+      "resumed_from_step": 1000,
+      "steps": 1500,
+      "params": 14997504,
+      "samples": [
+        "How do you get a <unk>? They are talking to a girl",
+        "I'm going to make a joke about the day.",
+        "My girlfriend says \"I asked me if I would get the time the street with a lot of a new eyes.\"",
+        "When I am not funny... I don't have your life.",
+        "How many fish does it take to change a light bulb? They both are you a light bulb and when the difference between an old man and a lightbulb? A cow says, he was a good at a lightbulb?",
+        "What did the blonde say to the first woman who have a small way to the door?",
+        "There does something called \"I'm going to get some year old\" - \"for this time I don't use\"",
+        "What is the difference between a man and a woman that will be a man with a black man? A black woman had a joke for a lot of dead.",
+        "How do you get a bar about something as a dog? Because it was the last night",
+        "A man walks into a bar.......... \"Hey\" You will kill you? \"No one of the other!\"",
+        "I didn't think they're gonna say I don't think I would give you a pizza for the way of them a man.",
+        "What's the difference between a tree and a man in a lot of money? A man",
+        "A pirate says \"I like my dad replies\" no one says, \"I know how much.\"",
+        "A man walks into a bar and says \"What do you call the difference between a guy and a prostitute? A man is a tree and a new tree and a woman.",
+        "What does a lawyer say to the most of a <unk>? He was walking to the road.",
+        "Why did the road cross the road? Because they had a <unk>.",
+        "If you have a lot like to make a cat and a lot of a new room? Because they would be a big ones.",
+        "I had a new guy who got a <unk> - year..........................",
+        "How do you make a great baby player? He has a black guy",
+        "I was going to watch a new girl in my friend. And I can come back on her.",
+        "The old date is all the people in the end, and they don't know.",
+        "This is a lot like a big man, the first time, I could be a bad thing about a lot of a little little days.",
+        "When a little guy told me it was on the road? I am not sorry, I was a bad.",
+        "What would it be in the opposite of an hour and an American? It can't even.",
+        "A man walks into a bar.................. and the bartender asks, \"If you make your wife,\"",
+        "I love the other day I was like it's a good place. How many people who was the way a good thing in her mom, and a bar is a lightbulb?",
+        "I got the best part of my ex - - - 1 / 11. 2.. 1: 1.. \"I didn't know what it is that one day!\"",
+        "I want to get a lot of people. He got <unk>.",
+        "What is a baby and a bad girl? A lot of a lot, but the end of time you are very nice, then not allowed to me",
+        "[for 2 year 3.. * takes a <unk> <unk> * * * * knock * * * * * * *",
+        "What do you cross a dog with sex? A cat, a man........",
+        "How many dog does it take to change a light paper? One to screw in the other day.",
+        "I'm very high on the same...... that I'm not a bad time.",
+        "What do you call a black man with no legs? A <unk>",
+        "My wife said he made at the doctor... It's a good person with her mom. I was a terrible hand.",
+        "What do you call a pizza that don't have with an octopus? Nothing. It's going to do, we have a good at their body.",
+        "The whole other guy who didn't the first one that the way to change the front of the road.",
+        "What does the difference between a Mexican guy with 2? A woman had a lightbulb!",
+        "I'm a new business joke...... you say but I am because it gets a good day",
+        "A boy and in the doctor says \"How do you take a lot?\" No, I don't you \"",
+        "My friend told me that I was a man in my friend...",
+        "I had a little restaurant from my wife told me to have a guy. What is the only one on the other?",
+        "Me: What do you call a little dog who is to say to the time? You know that he's a lot on.",
+        "What do you call a cow with a girl who gets married? In the wrong.",
+        "A blonde is the <unk>.... they get that you are <unk> for one.",
+        "What does the black guy do before he cross his wife? One's a <unk>.",
+        "What do you call a baby that one of a great person? A man comes in the road and the other.",
+        "Why was the first girl on the guy that his car is being on the wrong day?",
+        "What does a little Mexican say? The first guy who got in her house!",
+        "Who was a little woman in the end? You do."
+      ],
+      "loss_history": [
+        {
+          "step": 250,
+          "train_loss": 5.746335678100586,
+          "val_loss": 5.755091696977615
+        },
+        {
+          "step": 500,
+          "train_loss": 5.297939720153809,
+          "val_loss": 5.418519467115402
+        },
+        {
+          "step": 750,
+          "train_loss": 5.015144701004028,
+          "val_loss": 5.328747779130936
+        },
+        {
+          "step": 1000,
+          "train_loss": 4.88812373161316,
+          "val_loss": 5.248034179210663
+        },
+        {
+          "step": 1250,
+          "train_loss": 4.73722352027893,
+          "val_loss": 5.2504983097314835
+        },
+        {
+          "step": 1500,
+          "train_loss": 4.742673387527466,
+          "val_loss": 5.225460857152939
+        }
+      ],
+      "quality": {
+        "n_samples": 50,
+        "complete_pct": 70.0,
+        "duplicate_pct": 0.0,
+        "mean_chars": 79.4,
+        "mean_words": 18.0
+      },
+      "checkpoints": [
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k-big/step-1000.pt",
+        "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k-big/step-1500.pt"
+      ],
+      "step": 3,
+      "what_changed": "bigger model: d_model 256, 6 layers, 8 heads, context 96 words; same 40k vocab and 50k jokes as step 2 \u2014 only capacity changes; decoding sweep still deferred",
+      "good_pct": 0.0,
+      "final_checkpoint": "/home/hatch/workspace/jokeGPT/checkpoints/word-level-50k-big/step-1500.pt",
+      "samples_file": "/home/hatch/workspace/jokeGPT/experiments/v2-samples/word-level-50k-big.json",
+      "judgement": {
+        "good": 0,
+        "n": 50,
+        "complete": 35,
+        "coherent": 4,
+        "joke_shaped": 0
+      }
+    }
+  ]
+}

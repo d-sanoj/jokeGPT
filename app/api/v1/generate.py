@@ -21,6 +21,7 @@ def generate_text(
             temperature=request.temperature,
             max_tokens=request.max_tokens,
             top_k=request.top_k,
+            top_p=request.top_p,
             checkpoint=request.checkpoint,
             seed=request.seed,
         )

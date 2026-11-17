@@ -152,3 +152,310 @@ The honest summary: a 0.8M-parameter character-level GPT, trained for
 the jokes. The experiment worked as an experiment — the comparisons
 are clean and the numbers are real — but the model itself is a
 starting point, not a joke teller.
+
+---
+
+# v2 — the upgrade sequence
+
+Target: **80% good samples** (40 of 50). "Good" is fixed for every
+step and judged against the same rubric (`experiments/judging-rubric.md`):
+a sample is good only if it is (1) complete — ends with `.` `!` or `?`
+and is 20–300 characters, (2) coherent — grammatical English throughout,
+no garbled fragments, no `<unk>` in the text, and (3) joke-shaped — has
+a setup and a punchline, reads as a joke even if weak. All 50 samples
+per step are saved verbatim in `experiments/v2-samples/` with their
+verdicts, so the judgment is auditable. One lever at a time, one
+commit per step. Stop early at 80%; stop if two consecutive levers
+each gain under 5 points of good%.
+
+Note on comparing losses across steps: v1's loss (2.06) and v2's loss
+(5.03) are **not** on the same scale. Loss is measured against the
+vocabulary, and v1's character vocab has 95 symbols (random guessing
+= ln 95 ≈ 4.55) while v2's word vocab has 10,000 (random = ln 10000
+≈ 9.21). The honest comparison between steps is good%, complete%,
+and the samples themselves — not the raw loss number.
+
+## Step 1 — word-level tokens
+
+**What changed:** the tokenizer. Same 15,000 jokes, same-ish model
+(d_model 128, 4 layers), but the model now predicts whole words
+instead of single letters. Vocabulary: the 10,000 most frequent words
+in the corpus plus `<pad>`, `<unk>`, `<eos>` — top-10k covers 95.4%
+of corpus tokens, so 4.6% of training tokens are `<unk>`. Context 64
+words (corpus mean 21.3 words/joke, p90 33, max 84). 2,079,488
+parameters. Trained 1,500 steps, temp 0.8 / top-k 40, 50 samples,
+fixed seeds 123+i.
+
+**The numbers:**
+
+| | v1 (char) | step 1 (word) |
+| --- | --- | --- |
+| val loss | 2.064 | 5.026 (train 4.738) |
+| complete | 4% | **62%** (31/50) |
+| good | 0% | **0%** (0/50) |
+| coherent | — | 6% (3/50) |
+| joke-shaped | — | 0% (0/50) |
+| duplicates | 0% | 0% |
+| mean sample | — | 59.6 chars, 12.8 words |
+
+Wall time ~40 minutes total: the first attempt reached step 900
+(val 5.076) before a service restart killed the process; training
+resumed from the step-500 checkpoint and finished steps 501–1500 in
+1,183 s. Resume support (`resume_from` in the training service, plus
+a test) was added so a killed run no longer restarts from scratch.
+
+**What it did:** word-level tokens fixed the spelling problem
+completely — every sample is made of real words now, no letter soup.
+Complete% jumped from 4% to 62%. The model also learned joke
+*openings* even better than v1: "What do you call a…", "Why did
+the…", "My wife…", "Knock…" appear in the right places, and the
+samples have the rhythm of jokes.
+
+**What broke:** `<unk>`. The model leans on the unknown-word token
+as a filler — it appears in **44 of 50 samples**, often several
+times per sample. The rubric fails any sample containing `<unk>` on
+coherence, and rightly so: "<unk>" is not a word a person would read.
+Even the 6 samples without `<unk>` are not jokes — they are plain,
+slightly garbled statements with no setup and no punchline. So good%
+stayed at 0% despite the big complete% jump. The model learned the
+shape of a joke even more convincingly, and still cannot deliver one.
+
+**Best samples (the 3 coherent ones — the least-bad of the 50):**
+
+1. "When I guess I'll go over the head to be the other day."
+2. "Did you mean you need? So you see a good joke!"
+3. "I think I don't know this is not not good."
+
+None is a joke. The first two are grammatical sentences with no
+setup or punchline; the third is a garbled plain statement.
+
+**Worst samples:**
+
+1. "<unk>: \"<unk>\" I think he will have a few joke. \"to watch you\""
+2. "What do you call a <unk> <unk>? <unk> <unk>"
+3. "The <unk>, <unk> is the <unk>, I have a bar.................................. and the <unk>."
+4. "I have to <unk>.............. <unk>......"
+5. "What does the difference between a car and the difference between \"in a man who who were a <unk>?\" <unk>. \"It is there, it's a <unk>.\""
+
+**What this means for the next steps:** the `<unk>` crutch is the
+single biggest blocker, and it is a decoding problem as much as a
+training problem — the model was trained with `<unk>` as a real
+token, so at sampling time it reaches for it whenever it is unsure.
+Step 2 (decoding sweep) will test whether colder sampling or a
+different top-k/top-p keeps `<unk>` out, and whether forbidding
+`<unk>` at generation time lets the model's real vocabulary do the
+work instead. If decoding can't fix it, the fix is a bigger vocab or
+no `<unk>` at all.
+
+**Note (v1 quirk, found while building v2):** v1's character
+vocabulary contains no newline, so v1's training stream was jokes
+concatenated with no separator, and v1 generation never stopped
+early — it always ran to 120 tokens. That is v1 behaviour and is
+left as-is; v2's word tokenizer appends `<eos>` per joke and
+generation stops at it.
+
+## Step 2 — bigger vocab + more data (the user's call)
+
+**What changed:** the decoding sweep was skipped on the user's
+choice (2026-11-16) and this step went straight at the `<unk>`
+problem instead. Two levers at once: the vocabulary grew from the
+10,000 most frequent words to **40,000** (measured on the cleaned
+50k corpus first — 40k covers 99.59% of corpus tokens, so only
+0.41% of training tokens are `<unk>`; 30k would have covered
+98.65% / 1.35%, and step 1 showed the model amplifies the training
+`<unk>` rate ~3x in generation, so 30k would still have left
+roughly a third of samples with `<unk>`), and the data grew from
+15,000 to **50,000 jokes** from the same cleaned pool (the same
+seeded shuffle, so the 50k contains v1's 15k). Same architecture
+otherwise: d_model 128, 4 layers, context 64 words. 5,919,488
+parameters (up from 2,079,488 — the embedding is most of it).
+Trained 2,500 steps (~5 epochs over the 50k corpus), temp 0.8 /
+top-k 40, 50 samples, same fixed seeds. Random-guessing loss for a
+40k vocab is ln 40000 ≈ 10.6, so the loss numbers here are not on
+step 1's scale (random ≈ 9.21) either.
+
+**The numbers:**
+
+| | v1 (char) | step 1 (word) | step 2 (word-50k) |
+| --- | --- | --- | --- |
+| val loss | 2.064 | 5.026 (train 4.738) | 5.262 (train 4.914) |
+| complete | 4% | 62% (31/50) | **68%** (34/50) |
+| good | 0% | 0% (0/50) | **0%** (0/50) |
+| coherent | — | 6% (3/50) | **18%** (9/50) |
+| joke-shaped | — | 0% (0/50) | **2%** (1/50) |
+| samples with `<unk>` | — | 88% (44/50) | **12%** (6/50) |
+| duplicates | 0% | 0% | 0% |
+| mean sample | — | 59.6 chars, 12.8 words | 80.2 chars, 18.1 words |
+
+Wall time ~2h20m of training: the first run reached step 2250
+(val 5.250) before the process was killed with no error — a
+runtime cleanup took out the training process and the monitoring
+shells at the same time. It resumed from the step-2000 checkpoint
+and finished steps 2001–2500 in 1,530 s. The resume restarts the
+optimizer fresh, so the re-run step-2250 val (5.262) is a touch
+above the pre-kill 5.250 — a negligible difference. Loss flattened
+late: val 5.291 at step 1750, 5.267 at 2000, 5.262 at 2500 — more
+steps at this size are not buying much.
+
+**What it did:** the vocab lever worked exactly as designed.
+`<unk>` collapsed from 44 of 50 samples to **6 of 50**, with just
+6 `<unk>` tokens in total. Coherent samples tripled (3 → 9), the
+samples got longer and more developed (18.1 words vs 12.8), and
+for the first time a sample has a real punchline shape (see below).
+Complete% crept up 62% → 68%.
+
+**What broke:** good% is still **0%**. The blocker moved. The 9
+coherent samples are all grammatical plain statements or
+question-and-answer pairs with no twist — none reads as a joke.
+And the one sample that does have a punchline shape is garbled in
+the setup. So no sample is complete AND coherent AND joke-shaped
+at the same time. The model can now spell, finish sentences, and
+mostly avoid `<unk>` — but it still cannot put a setup and a
+punchline together in one sample.
+
+**Best samples (the 9 coherent ones — none is a joke):**
+
+1. "How do you get a woman with me? I got a girl."
+2. "How many fish are you with a Mexican? You know when I said I hate it."
+3. "What is the difference between a man and a woman? A black man is a light bulb and two people."
+4. "What did the new people say when he got the first time? A man has been a good person."
+5. "Why are the black people for it? Because he is the first."
+6. "My wife said he made the same house."
+7. "What do you call a lot of a dog? A: The same night."
+8. "Why was the first girl on the guy? Because she had to play the wrong."
+9. "What do you call a long body? They got a group of her house."
+
+**The one joke-shaped sample (garbled, so not good):**
+
+1. "What do you cross a dog with sex with a light bulb? A baby."
+   — the cross-breeding setup with "A baby" as the answer is a
+   real punchline shape, the first in the whole sequence. But the
+   setup mashes two "with" phrases together, so it fails
+   coherence.
+
+**Worst samples (the 6 with `<unk>` — the whole remaining `<unk>` problem):**
+
+1. "What's the difference between a man and a man? To be a <unk>!"
+2. "What does a new favorite man get that? A <unk>"
+3. "[for <unk>] A: What does a lightbulb? Me: I make you? Me: It's pretty nice. Me: I'll come in my time. Me: "Oh I am.""
+4. "I had a little than you have a long thing about in the time. What is the only one on the other? A man in the <unk>."
+5. "My wife is the <unk> about his favorite thing they get back off from the other day."
+6. "Who was a little woman to get a <unk> an entire time? The best thing about it is the last night in bed."
+
+**What this means for the next steps:** vocabulary is no longer
+the binding constraint — 12% of samples still hit `<unk>`, but
+even a perfect vocab would only unlock the 9 coherent samples,
+and none of those is a joke. The blocker is now composition: the
+model needs to learn setup → punchline as a structure, not just
+words. The most promising next levers are the bigger model (d_model
+256, 6 layers — more capacity to hold the joke structure) and the
+deferred decoding sweep (colder / top-p sampling might keep the
+model on the joke-shaped track instead of drifting into plain
+statements). Longer training on this size is the weakest lever —
+val loss has flattened. If the bigger model still produces no
+joke-shaped samples, the honest conclusion is that this
+architecture needs either much more data or a different approach,
+and the blog should say so.
+
+## Step 3 — bigger model (the user's call)
+
+**What changed:** one lever, capacity. d_model 128 → **256**,
+n_layer 4 → **6**, n_head 4 → **8**, context 64 → **96 words**.
+Everything else identical to step 2: the same 40k vocab (99.59%
+coverage), the same 50,000 jokes, batch 32, lr 3e-4, temp 0.8 /
+top-k 40, 50 samples, same fixed seeds. 14,997,504 parameters
+(up from 5,919,488 — 2.5x). Trained 1,500 steps, which at context
+96 is ~4.4 epochs over the 50k corpus — the same exposure as step
+2's ~4.8 epochs, so the comparison is clean on data. Smoke-tested
+first (`scripts/smoke_big.py`, 25 steps): 12.33 s/step, peak RSS
+2.84 GB; the real run settled at ~8.7 s/step. Random-guessing loss
+for a 40k vocab is ln 40000 ≈ 10.6, same scale as step 2.
+
+**The numbers:**
+
+| | v1 (char) | step 1 (word) | step 2 (word-50k) | step 3 (big) |
+| --- | --- | --- | --- | --- |
+| val loss | 2.064 | 5.026 (train 4.738) | 5.262 (train 4.914) | **5.225** (train 4.743) |
+| complete | 4% | 62% (31/50) | 68% (34/50) | **70%** (35/50) |
+| good | 0% | 0% (0/50) | 0% (0/50) | **0%** (0/50) |
+| coherent | — | 6% (3/50) | 18% (9/50) | 8% (4/50) |
+| joke-shaped | — | 0% (0/50) | 2% (1/50) | 0% (0/50) |
+| samples with `<unk>` | — | 88% (44/50) | 12% (6/50) | 18% (9/50) |
+| duplicates | 0% | 0% | 0% | 0% |
+| mean sample | — | 59.6 chars, 12.8 words | 80.2 chars, 18.1 words | 79.4 chars, 18.0 words |
+
+Wall time ~4.4h of training across three legs; 5h33m wall-clock
+from launch (19:17 CST) to finish (00:50 CST). The runtime
+restarted twice and killed the training process both times — once
+at step 750 (val 5.255) and once at step 1250 (val 5.184). Each
+time it resumed cleanly from the latest 500-step checkpoint (step
+500, then step 1000) and finished, which is why checkpoints every
+500 steps matter. The resume restarts the optimizer fresh, so the
+re-run evals land a touch above the pre-kill ones (step 750: 5.329
+vs 5.255; step 1250: 5.250 vs 5.184) — small, same direction both
+times, so it is the resume, not noise. The recorded loss curve is
+the redo curve: 5.755 (250) → 5.419 (500) → 5.329 (750) → 5.248
+(1000) → 5.250 (1250) → 5.225 (1500). Loss flattened late again:
+val 5.248 at step 1000, 5.250 at 1250, 5.225 at 1500.
+
+**What it did:** val loss improved 5.262 → **5.225**, the best so
+far — but only by 0.037, about the size of the resume effect, so
+treat it as a small win, not a breakthrough. Complete% crept up
+68% → 70%. The model reaches for the same joke templates as step
+2 (light-bulb, cross-breeding, walks-into-a-bar) — the templates
+are learned; the composition is not.
+
+**What broke:** good% is still **0%**. Coherent samples fell 9 →
+4 and joke-shaped 1 → 0. The bigger model is not composing better
+jokes — it is composing slightly worse ones, or at best the same,
+with 2.5x the parameters. The `<unk>` rate ticked up 6 → 9 samples
+(noise-level, but it did not improve). The honest read: at this
+scale, capacity was **not** the bottleneck. The loss says the
+model predicts the next word a little better; the samples say it
+still cannot put a setup and a punchline together in one sample.
+More capacity bought a better loss number and nothing the rubric
+can see.
+
+**Best samples (the 4 coherent ones — none is a joke):**
+
+1. "I'm going to make a joke about the day."
+2. "What do you call a cow with a girl who gets married? In the wrong."
+3. "What does a little Mexican say? The first guy who got in her house!"
+4. "Who was a little woman in the end? You do."
+
+**Closest to a joke (mangled punchline):**
+
+1. "How many dog does it take to change a light paper? One to screw in the other day."
+   — the classic light-bulb joke, with the punchline's last words
+   swapped for "the other day". The model knows the shape; it
+   cannot land it.
+
+**Worst samples:**
+
+1. "[for 2 year 3.. * takes a <unk> <unk> * * * * knock * * * * * * *"
+   — pure noise.
+2. "I got the best part of my ex - - - 1 / 11. 2.. 1: 1.. \"I didn't know what it is that one day!\""
+   — number soup.
+3. "What do you cross a dog with sex? A cat, a man........"
+   — echoes step 2's best ("cross a dog with sex with a light
+   bulb? A baby") but the answer is two nouns and trailing dots.
+
+**What this means for the next steps:** capacity is ruled out as
+the bottleneck at this scale — 2.5x the parameters bought 0.04 of
+val loss and zero good jokes. The remaining levers in the
+sequence: the deferred decoding sweep (colder / top-p sampling
+might keep the model on the joke-shaped track — now the most
+promising cheap lever, since `<unk>` is mostly gone and the
+templates are there), more data (the full 219k cleaned jokes — the
+one lever not yet pulled at full scale, and the model has now seen
+the 50k set ~4.4 times), and longer training (weakest — val has
+flattened twice). If the decoding sweep also lands at 0%, the
+honest conclusion is that next-word prediction on this data, at
+this scale, learns joke surface but not joke structure — and the
+blog should say so.
+
+The API now serves this checkpoint by default: `POST
+/api/v1/generate` with no `checkpoint` field samples from
+`word-level-50k-big` (step 1500, val 5.225) — the best checkpoint
+so far. Any earlier run is still reachable by name
+(`"main"`, `"word-level"`, `"word-level-50k"`).

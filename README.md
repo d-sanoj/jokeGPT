@@ -37,15 +37,16 @@ python -m app            # http://127.0.0.1:8000, docs at /docs
 # What is in the corpus?
 curl http://127.0.0.1:8000/api/v1/corpus
 
-# Tell me a joke (from the trained main model)
+# Tell me a joke (default checkpoint is the best so far:
+# step 3, word-level-50k-big — val loss 5.225, 70% complete)
 curl -X POST http://127.0.0.1:8000/api/v1/generate \
   -H 'Content-Type: application/json' \
-  -d '{"temperature": 0.8, "max_tokens": 120, "checkpoint": "main"}'
+  -d '{"temperature": 0.8, "max_tokens": 120, "checkpoint": "word-level-50k-big"}'
 
 # Colder (safer, more repetitive) or hotter (wilder, more gibberish)
 curl -X POST http://127.0.0.1:8000/api/v1/generate \
   -H 'Content-Type: application/json' \
-  -d '{"temperature": 0.5, "max_tokens": 120, "checkpoint": "main"}'
+  -d '{"temperature": 0.5, "max_tokens": 120, "checkpoint": "word-level-50k-big"}'
 
 # Start a training job (d_model 128, 4 layers, 1500 steps by default)
 curl -X POST http://127.0.0.1:8000/api/v1/train \

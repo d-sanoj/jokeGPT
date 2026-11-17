@@ -9,6 +9,7 @@ import math
 import threading
 import time
 import uuid
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -22,7 +23,7 @@ from app.services.model_service import (
     count_parameters,
     model_config_dict,
 )
-from app.services.tokenizer_service import CharTokenizer
+from app.services.tokenizer_service import CharTokenizer, WordTokenizer
 
 logger = get_logger(__name__)
 
@@ -39,21 +40,34 @@ class TrainingService:
     ):
         self.corpus = corpus_repository
         self.checkpoints = checkpoint_repository
-        self._tokenizer: CharTokenizer | None = None
+        self._tokenizers: dict[tuple, CharTokenizer | WordTokenizer] = {}
         self._jobs: dict[str, TrainJobStatus] = {}
         self._lock = threading.Lock()
 
-    def tokenizer(self) -> CharTokenizer:
-        """The corpus tokenizer (built once, cached)."""
-        if self._tokenizer is None:
-            jokes = self.corpus.load_jokes()
-            self._tokenizer = CharTokenizer.from_texts([j.text for j in jokes])
-        return self._tokenizer
+    def tokenizer_for(
+        self, corpus: CorpusRepository, config: ModelConfig | None = None
+    ) -> CharTokenizer | WordTokenizer:
+        """The tokenizer for a run config (built once per config, cached)."""
+        kind = config.tokenizer if config is not None else "char"
+        max_vocab = config.max_vocab if config is not None else 10000
+        key = (kind, max_vocab, str(corpus.jokes_file))
+        if key not in self._tokenizers:
+            texts = [j.text for j in corpus.load_jokes()]
+            if kind == "word":
+                self._tokenizers[key] = WordTokenizer.from_texts(
+                    texts, max_vocab=max_vocab
+                )
+            else:
+                self._tokenizers[key] = CharTokenizer.from_texts(texts)
+        return self._tokenizers[key]
 
-    def _encode_split(self, jokes, tokenizer: CharTokenizer):
-        """Join jokes with newlines and encode to a token tensor."""
-        text = "\n".join(j.text for j in jokes) + "\n"
-        ids = tokenizer.encode(text)
+    def tokenizer(self) -> CharTokenizer | WordTokenizer:
+        """The corpus tokenizer (char, default corpus) — kept for callers."""
+        return self.tokenizer_for(self.corpus)
+
+    def _encode_split(self, jokes, tokenizer: CharTokenizer | WordTokenizer):
+        """Encode a joke list into one training token tensor."""
+        ids = tokenizer.encode_jokes([j.text for j in jokes])
         return torch.tensor(ids, dtype=torch.long)
 
     def _batch(self, ids: torch.Tensor, batch_size: int, context_len: int):
@@ -101,16 +115,26 @@ class TrainingService:
         cosine = 0.5 * (1 + math.cos(math.pi * min(1.0, progress)))
         return config.learning_rate * (0.1 + 0.9 * cosine)
 
-    def train(self, config: ModelConfig, progress=None) -> dict:
+    def train(
+        self,
+        config: ModelConfig,
+        progress=None,
+        resume_from=None,
+    ) -> dict:
         """Run one training job synchronously; returns its record.
 
         ``progress`` is an optional callback(job_status) invoked after
         each eval so the API can report live step and loss.
+        ``resume_from`` is an optional checkpoint path to continue
+        from (weights + loss history; the optimizer restarts fresh).
         """
         torch.manual_seed(config.seed)
         t0 = time.time()
-        tokenizer = self.tokenizer()
-        jokes = self.corpus.load_jokes()
+        corpus = self.corpus
+        if config.jokes_file is not None:
+            corpus = CorpusRepository(Path(config.jokes_file))
+        tokenizer = self.tokenizer_for(corpus, config)
+        jokes = corpus.load_jokes()
         if config.data_subset is not None:
             jokes = jokes[: config.data_subset]
         train_jokes, val_jokes = self._split(jokes, config)
@@ -141,7 +165,24 @@ class TrainingService:
         loss_history: list[dict] = []
         checkpoints: list[str] = []
         train_losses: list[float] = []
-        for step in range(1, config.max_steps + 1):
+        start_step = 1
+        resumed_from_step = None
+        if resume_from is not None:
+            payload = self.checkpoints.load_checkpoint(Path(resume_from))
+            model.load_state_dict(payload["state_dict"])
+            loss_history = list(payload.get("loss_history", []))
+            resumed_from_step = int(payload.get("step", 0))
+            start_step = resumed_from_step + 1
+            checkpoints = [str(resume_from)]
+            if start_step > config.max_steps:
+                raise ValueError(
+                    f"resume step {resumed_from_step} already at/past "
+                    f"max_steps {config.max_steps}"
+                )
+            logger.info(
+                "%s resuming from step %d", config.run_id, resumed_from_step
+            )
+        for step in range(start_step, config.max_steps + 1):
             for group in optimizer.param_groups:
                 group["lr"] = self._lr_at(step, config)
             x, y = self._batch(
@@ -179,6 +220,7 @@ class TrainingService:
                     model_cfg,
                     tokenizer.vocab,
                     loss_history,
+                    tokenizer_type=config.tokenizer,
                 )
                 checkpoints.append(str(path))
         wall = time.time() - t0
@@ -191,6 +233,7 @@ class TrainingService:
             "train_loss": final_train,
             "val_loss": final_val,
             "wall_seconds": round(wall, 1),
+            "resumed_from_step": resumed_from_step,
             "steps": config.max_steps,
             "params": params,
             "samples": [],
