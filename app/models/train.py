@@ -24,6 +24,18 @@ class ModelConfig(BaseModel):
         description="Train on only the first N jokes (ablation).",
     )
     run_id: str = "main"
+    tokenizer: str = Field(
+        default="char",
+        description="'char' (v1) or 'word' (v2) tokenization.",
+    )
+    max_vocab: int = Field(
+        default=10000,
+        description="Word-tokenizer vocab size (incl. specials).",
+    )
+    jokes_file: str | None = Field(
+        default=None,
+        description="Corpus file override (e.g. a bigger sample).",
+    )
 
 
 class TrainRequest(BaseModel):
