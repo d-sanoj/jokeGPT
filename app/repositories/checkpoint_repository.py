@@ -35,6 +35,7 @@ class CheckpointRepository:
         config: dict,
         vocab: list[str],
         loss_history: list[dict],
+        tokenizer_type: str = "char",
     ) -> Path:
         """Write a checkpoint; returns its path."""
         path = self.checkpoint_path(run_id, step)
@@ -44,6 +45,7 @@ class CheckpointRepository:
             "step": step,
             "config": config,
             "vocab": vocab,
+            "tokenizer": tokenizer_type,
             "state_dict": {k: v.cpu() for k, v in state_dict.items()},
             "loss_history": loss_history,
         }
